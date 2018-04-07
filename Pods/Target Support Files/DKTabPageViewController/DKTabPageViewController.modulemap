@@ -1,0 +1,6 @@
+framework module DKTabPageViewController {
+  umbrella header "DKTabPageViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

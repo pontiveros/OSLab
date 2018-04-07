@@ -1,0 +1,15 @@
+PODS:
+  - DKTabPageViewController (1.4.9)
+  - XLPagerTabStrip (7.0.0)
+
+DEPENDENCIES:
+  - DKTabPageViewController (~> 1.4)
+  - XLPagerTabStrip (~> 7.0)
+
+SPEC CHECKSUMS:
+  DKTabPageViewController: 875a52e9e56b99d24dba022114ed9ebcdd06b663
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
+
+PODFILE CHECKSUM: 6c9078a13c2f9486c4c8ddf539ee290f241bc29a
+
+COCOAPODS: 1.2.1
