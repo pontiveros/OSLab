@@ -18,7 +18,7 @@ class EngineWebVC: UIViewController, UIWebViewDelegate {
         self.title = "Web View"
         // Do any additional setup after loading the view.
         self.webView.allowsInlineMediaPlayback = true;
-        self.webView.loadRequest(URLRequest(url: URL(string:"http://www.intel.com")!))
+        self.webView.loadRequest(URLRequest(url: URL(string:"https://mobiledemo.jebbit.com/ujn1xj20")!))
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +37,7 @@ class EngineWebVC: UIViewController, UIWebViewDelegate {
     }
     */
 
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    private func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         return true
     }
     

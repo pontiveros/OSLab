@@ -9,9 +9,11 @@
 import UIKit
 import DKTabPageViewController
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RootTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var items:[String:String] = [String:String]()
+    var items:[String:String] = [String:String]()
+    
+    @IBOutlet var table: UITableView!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.items["My Profile"]       = "openMyProfile"
         self.items["Dashboard"]        = "openExpDashboard"
         self.items["Express App"]      = "openExpressApp"
+        self.items["WKWebView"]        = "openWKWebView"
+        self.items["Animations"]       = "openCAnimation"
+        self.items["GridCard"]         = "openGridCard"
+        self.items["Health Kit"]       = "openHealthKit"
+        self.items["Home View"]        = "openHomeView"
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +59,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 case "openMyProfile":       self.openMyProfile()
                 case "openExpDashboard":    self.openExpDashboard()
                 case "openExpressApp":      self.openExpressApp()
+                case "openWKWebView":       self.openWKWebView()
+                case "openCAnimation":      self.openCAnimation()
+                case "openGridCard":        self.openGridCard()
+                case "openHealthKit":       self.openHealthKit()
+                case "openHomeView":        self.openHomeView()
                 default:
                 print("Selected wrong")
             }
@@ -75,6 +87,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell?.textLabel?.text = cellTitle
         return cell!
+    }
+    
+    func openHomeView() {
+        let vc = HomeViewController().makeShipDetailsUI("HomeView")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func openTouchID() {
@@ -114,6 +131,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func openWKWebView() -> Void {
+        let vc = WKWebViewController(nibName: "WKWebViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openGridCard() -> Void {
+        let vc = GridCardContainerVC(nibName: "GridCardContainerVC", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func openCAnimation() -> Void {
+        let vc = CAnimationSample(nibName: "CAnimationSample", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        let vc = CAImageAnimationVC(nibName: "CAImageAnimationVC", bundle: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        let vc = CAnimationRootVC(nibName: "CAnimationRootVC", bundle: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func openExpressApp() -> Void {
         if let url = URL(string: "express://?"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -122,5 +160,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        if let url = URL(string: "https://www.express.com"), UIApplication.shared.canOpenURL(url) {
 //            UIApplication.shared.open(url, options: [:], completionHandler: nil)
 //        }
+    }
+    
+    func openHealthKit() -> Void {
+        let vc = HealthVC(nibName: "HealthVC", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
