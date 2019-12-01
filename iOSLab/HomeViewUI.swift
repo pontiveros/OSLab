@@ -10,36 +10,45 @@ import SwiftUI
 
 struct HomeViewUI: View {
     @available(iOS 13.0.0, *)
+
+    @State private var aAlert = false
+
     var body: some View {
-//        .navigationBarTitle(Text("Home View"))
+
         VStack {
-            Text("Developers").font(.title)
-            HStack {
-                Text("Hello Pedro Ontiveros")
-                Text("iOS Developer!")
-            }
-            HStack {
-                Text("Other Developer")
-                Text("Android Developer!")
-            }
-            HStack {
-                Text("Third Party Developer")
-                Text("NodeJS Developer!")
+            NavigationView {
+                List(0 ..< 20) { item in
+                    VStack {
+                        Text("Developer:").font(.title)
+                        Text("Pedro Ontiveros").font(.subheadline).foregroundColor(.red)
+                        Button(action: {
+                            print("You tapped on my button!")
+                        }, label: {Text("Tap Me!")})
+                    }
+                }
+                .navigationBarTitle(Text("DEVELOPERS"))
             }
             Spacer()
             Button(action: {
-                print("Hello this is Pedro Ontiveros")
-            }) {
-                Text("ClickME!")
-            }
+                self.aAlert = true
+            }, label: {
+                Text("Show Alert")
+            })
         }
-
+        
+        .alert(isPresented: $aAlert) { () -> Alert in
+            Alert(title: Text("SwiftUI Intro"),
+                  message: Text("This is the first contact with SwiftUI"),
+                  primaryButton: .default(Text("OK"), action: {
+                    print("OK tapped")
+                  }), secondaryButton: .default(Text("Cancel")))
+        }
     }
     
-//    @available(iOS 13.0.0, *)
-//    func clickMe(sender: Button<Label: View>) -> Void {
-//        print("Puta Madre!")
-//    }
+    @available(iOS 13.0.0, *)
+    func myAction() {
+        print("Check how this is working today!")
+    }
 }
 
 struct HomeViewUI_Previews: PreviewProvider {

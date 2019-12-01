@@ -14,6 +14,28 @@ let healthKitStore:HKHealthStore = HKHealthStore()
 
 class HealthVC: UIViewController {
 
+    @IBOutlet var label:UILabel!
+    
+    private var clicks:Int! {
+        willSet {
+            print("Before setting value for clicks")
+        }
+        
+        didSet {
+            print("After setting value for clicks")
+        }
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        clicks = 0
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+        clicks = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +54,9 @@ class HealthVC: UIViewController {
     }
     */
 
+    @IBAction func onTapAssign(sender: Any) -> Void {
+        self.clicks += 1
+        self.label.text = "\(self.clicks ?? 0)"
+        print("Value of clicks is: \(String(describing: self.clicks)) time/s...")
+    }
 }

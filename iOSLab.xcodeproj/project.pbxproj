@@ -12,6 +12,7 @@
 		B9E4B54374E7DD96B6FC5C20 /* Pods_iOSLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2E5C659FFB8FD329DCB259 /* Pods_iOSLab.framework */; };
 		DA8BB570237F4B0E007198AA /* HomeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BB56F237F4B0E007198AA /* HomeViewUI.swift */; };
 		DA8BB575237F4DBA007198AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BB574237F4DBA007198AA /* HomeViewController.swift */; };
+		DA8BB57A2381DCC5007198AA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BB5792381DCC5007198AA /* Product.swift */; };
 		DABFDA1D226E580100CEFDE4 /* HealthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFDA1B226E580100CEFDE4 /* HealthVC.swift */; };
 		DABFDA1E226E580100CEFDE4 /* HealthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABFDA1C226E580100CEFDE4 /* HealthVC.xib */; };
 		DABFDA20226EBCC200CEFDE4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABFDA1F226EBCC200CEFDE4 /* HealthKit.framework */; };
@@ -93,6 +94,7 @@
 		DA13DBA1220C90EC00196942 /* iOSLab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSLab.entitlements; sourceTree = "<group>"; };
 		DA8BB56F237F4B0E007198AA /* HomeViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUI.swift; sourceTree = "<group>"; };
 		DA8BB574237F4DBA007198AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = home/HomeViewController.swift; sourceTree = "<group>"; };
+		DA8BB5792381DCC5007198AA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = home/Product.swift; sourceTree = "<group>"; };
 		DABFDA1B226E580100CEFDE4 /* HealthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthVC.swift; sourceTree = "<group>"; };
 		DABFDA1C226E580100CEFDE4 /* HealthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthVC.xib; sourceTree = "<group>"; };
 		DABFDA1F226EBCC200CEFDE4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -206,6 +208,7 @@
 			children = (
 				DA8BB56F237F4B0E007198AA /* HomeViewUI.swift */,
 				DA8BB574237F4DBA007198AA /* HomeViewController.swift */,
+				DA8BB5792381DCC5007198AA /* Product.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				DA8BB570237F4B0E007198AA /* HomeViewUI.swift in Sources */,
 				F36C7877219115E9006EFB92 /* CAImageAnimationVC.swift in Sources */,
 				F356F23E1F68E16000E89D27 /* TabPerksVC.swift in Sources */,
+				DA8BB57A2381DCC5007198AA /* Product.swift in Sources */,
 				F356F23C1F68E14800E89D27 /* TabMessageVC.swift in Sources */,
 				F370E0AC1F259F0D00FF34D1 /* EngineWebVC.swift in Sources */,
 				F304AADE21E6E4A0001399AD /* EXPGridCardViewCell.swift in Sources */,

@@ -29,7 +29,7 @@ class RootTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.items["Apple Pass"]       = "openApplePass"
         self.items["My Profile"]       = "openMyProfile"
         self.items["Dashboard"]        = "openExpDashboard"
-        self.items["Express App"]      = "openExpressApp"
+        self.items["Twitter App"]      = "openTwitterApp"
         self.items["WKWebView"]        = "openWKWebView"
         self.items["Animations"]       = "openCAnimation"
         self.items["GridCard"]         = "openGridCard"
@@ -58,7 +58,7 @@ class RootTableViewController: UIViewController, UITableViewDelegate, UITableVie
                 case "openApplePass":       self.openApplePass()
                 case "openMyProfile":       self.openMyProfile()
                 case "openExpDashboard":    self.openExpDashboard()
-                case "openExpressApp":      self.openExpressApp()
+                case "openTwitterApp":      self.openTwitterApp()
                 case "openWKWebView":       self.openWKWebView()
                 case "openCAnimation":      self.openCAnimation()
                 case "openGridCard":        self.openGridCard()
@@ -91,7 +91,8 @@ class RootTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func openHomeView() {
         let vc = HomeViewController().makeShipDetailsUI("HomeView")
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func openTouchID() {
@@ -152,8 +153,8 @@ class RootTableViewController: UIViewController, UITableViewDelegate, UITableVie
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func openExpressApp() -> Void {
-        if let url = URL(string: "express://?"), UIApplication.shared.canOpenURL(url) {
+    func openTwitterApp() -> Void {
+        if let url = URL(string: "twitter://?"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
         
